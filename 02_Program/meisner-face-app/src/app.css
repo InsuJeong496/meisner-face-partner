@@ -1,0 +1,377 @@
+:root {
+  font-family:
+    Inter, Pretendard, "Malgun Gothic", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: #18212b;
+  background: #f5f3ed;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+textarea {
+  font: inherit;
+}
+
+button {
+  border: 1px solid #cfd7de;
+  background: #ffffff;
+  color: #18212b;
+  min-height: 44px;
+  padding: 0 16px;
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+  border-color: #1f7a6d;
+}
+
+button:focus-visible {
+  outline: 3px solid rgba(29, 122, 107, 0.24);
+  outline-offset: 2px;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.62;
+}
+
+.app-shell {
+  display: grid;
+  grid-template-columns: minmax(360px, 0.92fr) minmax(420px, 1.08fr);
+  min-height: 100vh;
+}
+
+.stage-panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 28px;
+  padding: 48px;
+  background: #152b35;
+}
+
+.source-chip {
+  position: absolute;
+  top: 28px;
+  left: 48px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  color: #f3f0ea;
+  padding: 8px 12px;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.face-card {
+  position: relative;
+  width: min(68vw, 360px);
+  aspect-ratio: 1;
+  margin-top: 28px;
+}
+
+.face-crop {
+  width: 100%;
+  height: 100%;
+  border: 12px solid #f5f3ed;
+  box-shadow: 0 26px 70px rgba(10, 17, 24, 0.32);
+  background-color: #d8c8ba;
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: auto 100%;
+}
+
+.attention-ring {
+  position: absolute;
+  inset: -16px;
+  border: 2px solid rgba(255, 177, 92, 0.92);
+  pointer-events: none;
+}
+
+.partner-copy {
+  max-width: 520px;
+  color: #f5f3ed;
+}
+
+.partner-copy .eyebrow {
+  color: #ffb15c;
+  font-weight: 700;
+  margin: 0 0 8px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.partner-copy h1 {
+  margin: 0 0 14px;
+  font-size: clamp(36px, 5vw, 62px);
+  line-height: 1.05;
+  letter-spacing: 0;
+}
+
+.partner-copy p {
+  margin: 0;
+  color: rgba(245, 243, 237, 0.82);
+  font-size: 16px;
+  line-height: 1.72;
+}
+
+.partner-copy h1,
+.partner-copy p,
+.response-card strong,
+.status,
+.examples button {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.practice-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  padding: 56px;
+  background: #f7f4ef;
+}
+
+.mode-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.mode-tabs button {
+  background: #ebe7de;
+}
+
+.mode-tabs button.active {
+  border-color: #1d7a6b;
+  background: #1d7a6b;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 800;
+  color: #1b2834;
+}
+
+textarea {
+  width: 100%;
+  resize: vertical;
+  border: 1px solid #cfd7de;
+  background: #ffffff;
+  color: #18212b;
+  padding: 18px;
+  min-height: 132px;
+  line-height: 1.6;
+  outline: none;
+}
+
+textarea:focus {
+  border-color: #1d7a6b;
+  box-shadow: 0 0 0 3px rgba(29, 122, 107, 0.14);
+}
+
+.button-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.button-row .primary {
+  border-color: #17202a;
+  background: #17202a;
+  color: #ffffff;
+  font-weight: 800;
+}
+
+.microphone-monitor {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(200px, 0.9fr);
+  align-items: center;
+  gap: 16px;
+  min-height: 88px;
+  border: 1px solid #d8dedf;
+  background: #ffffff;
+  padding: 16px;
+  transition:
+    border-color 120ms ease-out,
+    background-color 120ms ease-out;
+}
+
+.microphone-monitor.active,
+.microphone-monitor.connecting {
+  border-color: #1d7a6b;
+  background: rgba(29, 122, 107, 0.06);
+}
+
+.microphone-state {
+  display: grid;
+  grid-template-columns: 10px minmax(0, 1fr);
+  align-items: center;
+  column-gap: 8px;
+  row-gap: 4px;
+  min-width: 0;
+}
+
+.microphone-state strong {
+  color: #17202a;
+  font-size: 14px;
+}
+
+.microphone-state > span:last-child {
+  grid-column: 2;
+  color: #63707a;
+  font-size: 12px;
+  line-height: 1.4;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.recording-dot {
+  width: 10px;
+  height: 10px;
+  border: 2px solid #cfd7de;
+  border-radius: 50%;
+  background: #ffffff;
+  transition:
+    border-color 120ms ease-out,
+    background-color 120ms ease-out,
+    transform 120ms ease-out;
+}
+
+.microphone-monitor.active .recording-dot,
+.microphone-monitor.connecting .recording-dot {
+  border-color: #1d7a6b;
+  background: #1d7a6b;
+  transform: scale(1.08);
+}
+
+.waveform {
+  display: grid;
+  grid-template-columns: repeat(24, minmax(2px, 1fr));
+  align-items: center;
+  gap: 3px;
+  width: 100%;
+  height: 48px;
+  overflow: hidden;
+}
+
+.waveform span {
+  width: 100%;
+  height: 100%;
+  min-width: 2px;
+  background: #cfd7de;
+  opacity: 0.72;
+  transform-origin: center;
+  transition:
+    transform 120ms ease-out,
+    opacity 120ms ease-out,
+    background-color 120ms ease-out;
+}
+
+.microphone-monitor.active .waveform span {
+  background: #1d7a6b;
+  opacity: 0.94;
+}
+
+.response-card {
+  display: grid;
+  gap: 8px;
+  border: 1px solid #d8dedf;
+  background: #ffffff;
+  padding: 18px;
+}
+
+.response-card span {
+  color: #63707a;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.response-card strong {
+  font-size: clamp(24px, 3.2vw, 34px);
+  line-height: 1.28;
+  color: #17202a;
+}
+
+.status {
+  min-height: 24px;
+  margin: 0;
+  color: #5d6670;
+  line-height: 1.5;
+}
+
+.examples {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding-top: 8px;
+}
+
+.examples span {
+  color: #63707a;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.examples button {
+  min-height: 36px;
+  padding: 0 12px;
+  background: #fffaf1;
+}
+
+@media (max-width: 900px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .stage-panel,
+  .practice-panel {
+    min-height: auto;
+    padding: 32px 22px;
+  }
+
+  .source-chip {
+    position: static;
+    align-self: flex-start;
+  }
+
+  .face-card {
+    width: min(80vw, 320px);
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .microphone-monitor {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .waveform {
+    height: 40px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .microphone-monitor,
+  .recording-dot,
+  .waveform span {
+    transition: none;
+  }
+}

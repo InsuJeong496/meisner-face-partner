@@ -1,0 +1,26 @@
+{
+  "name": "meisner-face-app",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "build": "vite build",
+    "preview": "vite preview",
+    "tauri": "tauri"
+  },
+  "dependencies": {
+    "@sveltejs/vite-plugin-svelte": "^5.1.1",
+    "@tauri-apps/api": "^2.2.0",
+    "@tauri-apps/cli": "^2.2.6",
+    "es-toolkit": "^1.42.0",
+    "svelte": "^5.19.7",
+    "vite": "^6.1.0"
+  },
+  "devDependencies": {
+    "@tsconfig/svelte": "^5.0.4",
+    "svelte-check": "4.7.7",
+    "typescript": "^5.7.3"
+  }
+}

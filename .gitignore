@@ -1,0 +1,45 @@
+# Dependencies and build outputs
+**/node_modules/
+**/target/
+**/dist/
+**/src-tauri/gen/
+**/.venv/
+**/__pycache__/
+**/*.py[cod]
+**/.ruff_cache/
+**/.pytest_cache/
+**/*.tsbuildinfo
+
+# Local tools, sessions and verification evidence
+.codegraph/
+.omo/
+.playwright-mcp/
+**/.omo/
+artifacts/
+**/test-results/
+**/playwright-report/
+.ao/launch.local.json
+
+# Credentials and machine-local settings
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+*.pem
+*.key
+.DS_Store
+Thumbs.db
+
+# Local-only research, authoring workflow and review captures
+/01_Doc/
+/.agents/
+/AGENTS.md
+/docs/AGENT_ORCHESTRATOR.md
+/openspec/changes/
+/meisner-face-mvp.png
+/meisner-face-mvp-final.png
+/tts-quality-desktop-1280.png
+/tts-quality-mobile-375.png
+/tts-quality-tablet-768.png

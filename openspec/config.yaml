@@ -1,0 +1,52 @@
+schema: spec-driven
+
+context: |
+  Language: ko
+  All artifacts must be written in ko.
+  Keep OpenSpec structural headings and SHALL/MUST keywords in English.
+  Product: Meisner Face Partner, a solo repetition-practice desktop MVP.
+  App root: 02_Program/meisner-face-app.
+  Stack: Svelte 5, TypeScript, Vite, Tauri 2, Rust; optional Python AI worker.
+  Platform: Windows. Native audio paths require Windows verification.
+  Development: Agent Orchestrator with locally authenticated Codex CLI; Git history.
+  Muse API is reserved for future in-app AI features, not development orchestration.
+  Existing planning documents may predate the app; inspect current code before treating them as current scope.
+
+rules:
+  proposal:
+    - State the requested user outcome and scope boundaries; do not expand product scope autonomously.
+  specs:
+    - Describe observable behavior with SHALL/MUST and concrete success and failure scenarios.
+  tasks:
+    - Tie completion to verification evidence; keep unverified device or API work explicit.
+
+operations:
+  apply:
+    guidance:
+      - For an explicit one-shot implementation request, carry authorized planning, implementation and verification through in the same request.
+      - Run pwsh -NoProfile -File scripts/verify.ps1 from the repository root before declaring automated checks complete.
+  archive:
+    guidance:
+      - Archive only after the required implementation and checks are complete; retain an unfinished change when an external prerequisite is missing.
+
+# Per-artifact rules (optional)
+# Add custom rules for specific artifacts.
+# Example:
+#   rules:
+#     proposal:
+#       - Keep proposals under 500 words
+#       - Always state what is out of scope
+#     tasks:
+#       - Break tasks into chunks of max 2 hours
+
+# Per-operation guidance (optional)
+# Add advisory guidance for how apply and archive work should be conducted.
+# This is separate from artifact rules above.
+# Example:
+#   operations:
+#     apply:
+#       guidance:
+#         - Keep test summaries concise
+#     archive:
+#       guidance:
+#         - Summarize the archive outcome before finishing
